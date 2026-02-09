@@ -17,8 +17,8 @@ import com.ebms.api.client.dto.ClientRequest;
 import com.ebms.api.client.dto.ClientResponse;
 import com.ebms.common.response.ApiResponse;
 import com.ebms.domain.client.service.ClientService;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
@@ -44,7 +44,7 @@ public class ClientController {
         return new ResponseEntity<>(clientService.updateClientStatus(clientId, status), HttpStatus.OK);
     }
 
-    @GetMapping("/get-client")
+    @GetMapping("/get-client/{clientId}")
     public ResponseEntity<ApiResponse<ClientResponse>> getClient(@PathVariable Long clientId){
         return new ResponseEntity<>(clientService.getByClientId(clientId), HttpStatus.OK);
     }
