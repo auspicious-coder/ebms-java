@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 public class EventResponse {
     private Long id;
     private Long clientId;
+    private String clientName;
     private String eventName;
     private LocalDate startDate;
     private LocalDate endDate;

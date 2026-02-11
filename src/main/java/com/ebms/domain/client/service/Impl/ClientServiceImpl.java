@@ -109,7 +109,6 @@ public class ClientServiceImpl implements ClientService{
                     .map(this::mapClientResponse)
                     .collect(Collectors.toList());
             return ResponseUtils.success(clients, "success");
-            
         } catch (Exception e) {
             return ResponseUtils.failure("Failed to retrieve clients", HttpStatus.INTERNAL_SERVER_ERROR);
         }

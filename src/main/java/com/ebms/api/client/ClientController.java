@@ -30,7 +30,7 @@ public class ClientController {
     private ClientService clientService;
 
     @PostMapping("/create")
-    public ResponseEntity<?> createClient(@RequestBody ClientRequest clientRequest){
+    public ResponseEntity<ApiResponse<ClientResponse>> createClient(@RequestBody ClientRequest clientRequest){
         return new ResponseEntity<>(clientService.addClient(clientRequest), HttpStatus.CREATED);
     }
 
